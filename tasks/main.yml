@@ -1,0 +1,13 @@
+---
+- name: rspamd | add apt key for repo
+  apt_key: url=https://rspamd.com/apt-stable/gpg.key state=present
+
+- name: rspamd | add repo for {{ ansible_distribution_release }}
+  apt_repository: repo="deb http://rspamd.com/apt-stable/ {{ ansible_distribution_release }} main" filename=rspamd state=present
+
+- name: rspamd | add repo for {{ ansible_distribution_release }}
+  apt_repository: repo="deb-src http://rspamd.com/apt-stable/ {{ ansible_distribution_release }} main" filename=rspamd state=present
+
+- name: rspamd | install rspamd packages
+  apt: name={{ item }} state=latest  update_cache=yes
+  with_items: "{{ rspamd_packages }}"
