@@ -1,4 +1,4 @@
-# ansible-dovecot
+# ansible-rspamd
 
 ansible-rspamd is an Ansible role to install rspamd on a debian based OS.
 
