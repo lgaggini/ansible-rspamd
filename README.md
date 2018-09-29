@@ -19,8 +19,8 @@ The configuration is done by vars listed and explained in [defaults/main.yml](ht
 ## Usage
 
 ```
-- name: bootstrap an ubuntu cloud image for dovecot
-  hosts: imapserver
+- name: bootstrap an ubuntu cloud image for rspamd
+  hosts: mailserver
   vars_files:
     - group_vars/rspamd.yml
 
